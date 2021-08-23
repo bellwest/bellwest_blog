@@ -19,9 +19,11 @@ function App() {
     Axios.post("http://localhost:3001/api/insert", {
       postTitle: postTitle,
       postContent: postContent
-    }).then(() => {
-      alert("post submitted");
     });
+    setPostList([
+      ...postList,
+      { post_title: postTitle, post_content: postContent },
+    ]);
   };
 
   return (
